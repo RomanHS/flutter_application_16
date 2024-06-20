@@ -24,7 +24,7 @@ abstract class SL {
 
     final AuthCubit authCubit = authSL();
 
-    userCubit.init(userStream: authCubit.getUserStream());
+    userCubit.init(userStream: authCubit.userStream);
 
     await authCubit.init();
 

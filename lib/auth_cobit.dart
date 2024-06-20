@@ -35,7 +35,7 @@ class AuthCubit extends Cubit<AuthState> {
     required this.authRepo,
   }) : super(const NotAuthState());
 
-  Stream<String> getUserStream() => stream.map((AuthState state) => state.user ?? '');
+  Stream<String> get userStream => stream.map((AuthState state) => state.user ?? '');
 
   Future<void> init() async {
     final String? user = await authRepo.getUser();
