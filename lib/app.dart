@@ -22,7 +22,7 @@ class _AppState extends State<App> {
       bloc: SL.authSL<UserCubit>(),
 
       ///
-      listener: (BuildContext context, String user) => navigatorKey.currentState?.pushReplacementNamed(user.isEmpty ? '/' : '/home'),
+      listener: (BuildContext context, String user) => navigatorKey.currentState?.pushReplacementNamed(user.isEmpty ? '/' : 'home'),
 
       ///
       child: MaterialApp(
@@ -30,7 +30,7 @@ class _AppState extends State<App> {
         navigatorKey: navigatorKey,
 
         ///
-        initialRoute: SL.authSL<UserCubit>().state.isEmpty ? '/' : '/home',
+        initialRoute: SL.authSL<UserCubit>().state.isEmpty ? '/' : 'home',
 
         ///
         onGenerateRoute: (RouteSettings settings) {
@@ -40,7 +40,7 @@ class _AppState extends State<App> {
                 builder: (BuildContext context) => const AuthPage(),
               );
 
-            case '/home':
+            case 'home':
               return MaterialPageRoute<void>(
                 builder: (BuildContext context) => const HomePage(),
               );
